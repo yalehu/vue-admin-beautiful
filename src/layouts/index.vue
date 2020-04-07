@@ -34,7 +34,7 @@
     >
       <div
         v-if="device === 'mobile' && collapse === false"
-        class="drawer-bg"
+        class="mask"
         @click="handleClickOutside"
       />
       <side-bar />
@@ -164,11 +164,14 @@ export default {
   .layout-container-vertical {
     position: relative;
 
-    .drawer-bg {
+    .mask {
       background: #000;
       opacity: 0.5;
       width: 100vw;
       top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       height: 100vh;
       position: fixed;
       z-index: 98;
@@ -203,10 +206,9 @@ export default {
         }
 
         .tags-view-container {
-          position: relative;
           padding-left: 8px;
+          padding-right: 8px;
           box-shadow: $base-box-shadow;
-          width: 100%;
         }
 
         .app-main-container {
@@ -243,30 +245,31 @@ export default {
       .layout-container-vertical {
         .byui-main {
           margin-left: $base-left-menu-width-min !important;
+
+          .app-main-container {
+            margin: 0px !important;
+            width: 100% !important;
+          }
         }
       }
 
       .byui-main {
-        ::v-deep {
-          .fixed-header {
-            left: 0 !important;
-            width: 100% !important;
-          }
-
-          .app-main-container {
-            width: calc(100% - 30px) !important;
-          }
+        .fixed-header {
+          left: 0 !important;
+          width: 100% !important;
         }
 
-        &.is-collapse-main {
-          margin-left: $base-left-menu-width-min !important;
+        .app-main-container {
+          width: calc(100% - 30px) !important;
+        }
+      }
 
-          ::v-deep {
-            .fixed-header {
-              width: 100% !important;
-              left: 0 !important;
-            }
-          }
+      &.is-collapse-main {
+        margin-left: $base-left-menu-width-min !important;
+
+        .fixed-header {
+          width: 100% !important;
+          left: 0 !important;
         }
       }
     }
