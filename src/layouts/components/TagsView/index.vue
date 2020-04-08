@@ -40,7 +40,7 @@
     </byui-icon>
     <ul
       v-show="visible"
-      :style="{ left: left + 'px', top: top + 'px' }"
+      :style="{ 'margin-left': left + 'px', 'margin-top': top + 'px' }"
       class="contextmenu"
     >
       <li @click="refreshSelectedTag(selectedTag)">
@@ -225,11 +225,7 @@ export default {
       } else {
         this.left = left;
       }
-      if ("vertical" === this.layout) {
-        this.top = e.clientY - 50;
-      } else {
-        this.top = e.clientY;
-      }
+      this.top = e.clientY - 50;
 
       this.visible = true;
       this.selectedTag = tag;
@@ -238,7 +234,6 @@ export default {
     closeMenu() {
       this.visible = false;
     },
-
     handleScroll(e) {
       let $wrap = $(".tags-view-container .el-scrollbar__wrap");
       if ("left" === e) {
@@ -254,10 +249,12 @@ export default {
 
 <style lang="scss" scoped>
 .tags-view-container {
+  user-select: none;
   height: 44px;
   position: relative;
   background: $base-color-white;
   box-sizing: border-box;
+
   .tags-icon {
     float: left;
     width: 30px;
@@ -267,13 +264,16 @@ export default {
     color: $base-color-gray;
     cursor: pointer;
     text-align: center;
+
     &:hover {
       opacity: 0.8;
     }
   }
+
   .tags-content {
     float: left;
     width: calc(100% - 60px);
+
     .tags-view-item {
       position: relative;
       cursor: pointer;
@@ -288,7 +288,7 @@ export default {
       display: inline-flex;
       justify-items: center;
       align-items: center;
-      padding: 0 15px 0 25px;
+      padding: 0 15px 0 15px;
 
       &.active {
         background-color: $base-color-blue;
@@ -325,7 +325,7 @@ export default {
     margin: 0;
     background: #fff;
     z-index: 999;
-    position: absolute;
+    position: fixed;
     list-style-type: none;
     padding: 5px 0;
     border-radius: 4px;
