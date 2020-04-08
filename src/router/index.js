@@ -222,6 +222,16 @@ export const asyncRoutes = [
     ],
   },
   {
+    path: "/401",
+    component: () => import("@/views/401"),
+    meta: { title: "401错误页演示", icon: "bug" },
+  },
+  {
+    path: "/404",
+    component: () => import("@/views/404"),
+    meta: { title: "404错误页演示", icon: "bug" },
+  },
+  {
     path: "*",
     redirect: "/404",
     hidden: true,
