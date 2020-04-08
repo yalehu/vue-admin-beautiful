@@ -112,10 +112,7 @@ export default {
     ...mapGetters(["layout", "header", "tagsView"]),
   },
   mounted() {
-    this.$nextTick(() => {
-      this.popoverVisible = true;
-      this.drawerVisible = true;
-    });
+    this.popoverVisible = true;
   },
   created() {
     const theme = localStorage.getItem("BYUI-VUE-THEME");
@@ -167,16 +164,19 @@ export default {
     },
     handleSaveTheme() {
       this.handleSetTheme();
+      location.reload();
     },
     handleSetDfaultTheme() {
       $("#BYUI-VUE-THEME").remove();
       localStorage.removeItem("BYUI-VUE-THEME");
       localStorage.removeItem("BYUI-VUE-LAYOUT");
+      localStorage.removeItem("BYUI-VUE-HEADER");
       localStorage.removeItem("BYUI-VUE-TAGS-VIEW");
       this.$store.dispatch("settings/changeLayout", this.theme.layout);
       this.$refs["form"].resetFields();
       Object.assign(this.$data, this.$options.data());
       this.drawerVisible = false;
+      location.reload();
     },
     handleSwitchLayout(layout) {
       localStorage.setItem("BYUI-VUE-LAYOUT", layout);

@@ -196,6 +196,7 @@ export default {
       ::v-deep {
         .fixed-header {
           @include fix-header;
+          transition: all 0.28s;
           left: $base-left-menu-width;
           width: $base-right-content-width;
         }
@@ -247,8 +248,8 @@ export default {
           margin-left: $base-left-menu-width-min !important;
 
           .app-main-container {
-            margin: 0px !important;
-            width: 100% !important;
+            margin: 5px !important;
+            width: calc(100% - 10px) !important;
           }
         }
       }
