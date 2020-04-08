@@ -219,12 +219,12 @@ export const asyncRoutes = [
         component: () => import("@/views/byui/errorLog/index"),
         meta: { title: "错误日志模拟" },
       },
-      {
-        path: "*",
-        redirect: "/404",
-        hidden: true,
-      },
     ],
+  },
+  {
+    path: "*",
+    redirect: "/404",
+    hidden: true,
   },
 ];
 const createRouter = () =>
