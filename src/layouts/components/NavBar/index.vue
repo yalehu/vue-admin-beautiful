@@ -25,8 +25,8 @@
           />
 
           <el-avatar
-            class="hidden-xs-only"
-            icon="el-icon-user-solid"
+            :size="size"
+            :src="require('@/assets/user.gif')"
           ></el-avatar>
           <el-tooltip effect="light" placement="bottom">
             <div slot="content">上次登录时间:{{ lastLoginTime }}</div>
