@@ -1,6 +1,14 @@
 <template>
   <div class="index-container">
     <el-row :gutter="15">
+      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+        <el-alert
+          title="框架发布以来,免不了质疑和嘲笑,但我从未放弃,我只想靠自己的双手堂堂正正的赚钱......"
+          type="success"
+        >
+        </el-alert>
+        <br />
+      </el-col>
       <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6">
         <el-card shadow="never">
           <div slot="header">
@@ -80,12 +88,11 @@
         </el-card>
       </el-col>
       <el-col :xs="24" :sm="24" :md="24" :lg="16" :xl="16">
-        <el-card shadow="never">
+        <el-card class="card" shadow="never">
           <div slot="header">
             <span>销售量/签单量</span>
           </div>
           <byui-chart
-            style="height: 100%;"
             :autoresize="true"
             theme="byui-echarts-theme"
             :options="xsl"
@@ -93,22 +100,34 @@
         </el-card>
       </el-col>
       <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
-        <el-card shadow="never">
+        <el-card class="card" shadow="never">
           <div slot="header">
             <span>版本信息</span>
           </div>
           <table class="table">
             <tr>
+              <td>@vue/cli版本</td>
+              <td>{{ devDependencies["@vue/cli-service"] }}</td>
+            </tr>
+            <tr>
               <td>vue版本</td>
               <td>{{ dependencies.vue }}</td>
+            </tr>
+            <tr>
+              <td>vuex版本</td>
+              <td>{{ dependencies.vuex }}</td>
+            </tr>
+            <tr>
+              <td>vue-router版本</td>
+              <td>{{ dependencies["vue-router"] }}</td>
             </tr>
             <tr>
               <td>element-ui版本</td>
               <td>{{ dependencies["element-ui"] }}</td>
             </tr>
             <tr>
-              <td>脚手架版本</td>
-              <td>{{ devDependencies["@vue/cli-service"] }}</td>
+              <td>axios版本</td>
+              <td>{{ dependencies.axios }}</td>
             </tr>
           </table>
           <div class="bottom-btn">
@@ -118,7 +137,6 @@
             >
               <el-button type="primary">讨论群</el-button>
             </a>
-
             &nbsp;&nbsp;&nbsp;
             <a
               target="_blank"
@@ -139,7 +157,6 @@
 import byuiChart from "@/plugins/echarts";
 import byuiCount from "@/plugins/byuiCount";
 import { dependencies, devDependencies } from "../../../package.json";
-
 export default {
   name: "Index",
   components: {
@@ -288,13 +305,13 @@ export default {
                   return arr[index];
                 },
                 /*color: function() {
-                                                                      return `rgb(
-                                                                      ${Math.round(
-                                                                          Math.random() * 255
-                                                                      )} , ${Math.round(
-                                                                          Math.random() * 255
-                                                                      )} , ${Math.round(Math.random() * 255)} )`;
-                                                                  }*/
+                                                                    return `rgb(
+                                                                    ${Math.round(
+                                                                        Math.random() * 255
+                                                                    )} , ${Math.round(
+                                                                        Math.random() * 255
+                                                                    )} , ${Math.round(Math.random() * 255)} )`;
+                                                                }*/
               },
             },
             data: [
@@ -464,14 +481,23 @@ export default {
   ::v-deep {
     .el-card__body {
       height: 200px;
-
       .echarts {
         width: 100%;
         height: 140px;
       }
     }
   }
-
+  .card {
+    ::v-deep {
+      .el-card__body {
+        height: 305px;
+        .echarts {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
   .bottom {
     margin-top: 5px;
     height: 40px;
@@ -480,13 +506,11 @@ export default {
     text-align: left;
     color: #595959;
   }
-
   .table {
     width: 100%;
     background-color: #fff;
     color: #666;
     border-collapse: collapse;
-
     td {
       border-width: 1px;
       border-style: solid;
@@ -496,14 +520,12 @@ export default {
       min-height: 20px;
       line-height: 20px;
       font-size: 14px;
-
       &:first-child {
         text-align: right;
         width: 30%;
       }
     }
   }
-
   .bottom-btn {
     margin-top: 10px;
     float: right;
