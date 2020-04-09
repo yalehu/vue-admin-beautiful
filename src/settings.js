@@ -1,5 +1,5 @@
 module.exports = {
-  title: "vue-element-admin-beautiful", //标题
+  title: "vue-admin-beautiful", //标题
   abbreviation: "byui", //简写
   devPort: "80", //开发环境端口号
   version: "V2.2", //版本号
