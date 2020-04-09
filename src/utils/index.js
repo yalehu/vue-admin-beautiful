@@ -1,3 +1,4 @@
+import Vue from "vue";
 /**
  * @description 格式化时间
  * @param time
@@ -226,3 +227,8 @@ export function uuid(length) {
 export function random(m, n) {
   return Math.floor(Math.random() * (m - n) + n);
 }
+
+/**
+ * @description 事件总线
+ */
+export const EventBus = new Vue();

@@ -131,6 +131,10 @@
             </tr>
           </table>
           <div class="bottom-btn">
+            <a @click="handleChangeTheme">
+              <el-button type="primary">修改主题</el-button>
+            </a>
+            &nbsp;&nbsp;&nbsp;
             <a
               target="_blank"
               href="//shang.qq.com/wpa/qunwpa?idkey=00db5d4f8037fb577d128c2654de0bef68d32e55a41431b07a08a1d4446bb587"
@@ -157,6 +161,8 @@
 import byuiChart from "@/plugins/echarts";
 import byuiCount from "@/plugins/byuiCount";
 import { dependencies, devDependencies } from "../../../package.json";
+
+import { EventBus } from "@/utils";
 export default {
   name: "Index",
   components: {
@@ -472,6 +478,9 @@ export default {
       this.baseMessage(`点击了${e.name},这里可以写跳转`);
     },
     handleZrClick(e) {},
+    handleChangeTheme() {
+      EventBus.$emit("theme");
+    },
   },
 };
 </script>

@@ -90,7 +90,7 @@
 import variables from "@/styles/variables.scss";
 import { mapGetters } from "vuex";
 import { themeBar } from "@/settings";
-
+import { EventBus } from "@/utils";
 export default {
   name: "ThemeBar",
   data() {
@@ -113,6 +113,9 @@ export default {
   },
   mounted() {
     this.popoverVisible = true;
+    EventBus.$on("theme", () => {
+      this.handleChangeTheme();
+    });
   },
   created() {
     const theme = localStorage.getItem("BYUI-VUE-THEME");
