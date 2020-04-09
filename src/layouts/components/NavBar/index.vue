@@ -15,7 +15,7 @@
       <el-col :xs="20" :sm="12" :md="12" :lg="12" :xl="12">
         <div class="right-panel">
           <error-log />
-          <byui-screenfull></byui-screenfull>
+          <byui-screenfull @refresh="refreshSelectedTag"></byui-screenfull>
           <theme-bar></theme-bar>
           <byui-icon
             title="重载路由"
@@ -111,6 +111,7 @@ export default {
 
 <style lang="scss" scoped>
 .nav-bar-container {
+  user-select: none;
   height: 50px;
   overflow: hidden;
   position: relative;
@@ -128,12 +129,10 @@ export default {
       font-size: 20px;
       color: $base-color-gray;
       cursor: pointer;
-      transition: all 0.3s;
       margin-left: 10px;
     }
 
     .fold-unfold.el-icon-s-unfold {
-      transition: all 0.3s;
     }
     ::v-deep {
       .breadcrumb-container {
