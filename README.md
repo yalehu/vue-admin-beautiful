@@ -15,7 +15,8 @@
 
 ## 简介
 
-演示地址:[vue-element-admin-beautiful](http://chu1204505056.gitee.io/byui/#/login?redirect=%2F)
+演示地址:[vue-element-admin-beautiful](http://chu1204505056.gitee.io)
+演示地址(备份):[vue-element-admin-beautiful](http://chu1204505056.gitee.io/byui)
 
 ## 官方问题解答群 972435319
 
