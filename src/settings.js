@@ -3,7 +3,7 @@ module.exports = {
   abbreviation: "byui", //简写
   devPort: "80", //开发环境端口号
   version: "V2.2", //版本号
-  copyright: "初志鑫1204505056@qq.com", //必须保留版权,否则项目无法启动,吓唬你的,建议你保留
+  copyright: "初志鑫1204505056@qq.com", //必须保留版权
   routesWhiteList: ["/login", "/404", "/401"],
   loadingText: "正在加载中...", //加载时显示文字
   tokenName: "accessToken", //token名称
@@ -24,7 +24,7 @@ module.exports = {
   errorLog: ["development", "staging", "production"], //是否显示在页面高亮错误
   shieldF12: false, //设置生产环境是否屏蔽f12等开发组工具快捷键
   loginInterception: true, //是否开启登录拦截
-  loginRSA: true, //是否开启登录RSA加密
+  loginRSA: false, //是否开启登录RSA加密
   httpRequestFile: false, //是否依据mock数据生成webstorm HTTP Request请求文件
   authentication: "intelligence", //intelligence和all两种方式，前者后端权限只控制roles不控制view文件的import（前后端配合，减轻后端工作量），all方式完全交给后端前端只负责加载
 };
