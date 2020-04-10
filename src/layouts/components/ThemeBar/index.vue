@@ -95,7 +95,11 @@ export default {
   computed: {
     ...mapGetters(["layout", "header", "tagsView"]),
   },
-  mounted() {},
+  mounted() {
+    this.$baseEventBus.$on("theme", () => {
+      this.handleChangeTheme();
+    });
+  },
   created() {
     const theme = localStorage.getItem("BYUI-VUE-THEME");
     this.theme.layout = this.layout;

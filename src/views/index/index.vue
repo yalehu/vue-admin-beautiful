@@ -162,7 +162,6 @@ import byuiChart from "@/plugins/echarts";
 import byuiCount from "@/plugins/byuiCount";
 import { dependencies, devDependencies } from "../../../package.json";
 
-import { EventBus } from "@/utils";
 export default {
   name: "Index",
   components: {
@@ -479,7 +478,7 @@ export default {
     },
     handleZrClick(e) {},
     handleChangeTheme() {
-      EventBus.$emit("theme");
+      this.$baseEventBus.$emit("theme");
     },
   },
 };
