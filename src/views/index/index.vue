@@ -3,7 +3,7 @@
     <el-row :gutter="15">
       <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
         <el-alert
-          title="框架发布以来,免不了质疑和嘲笑,但我从未放弃,我只想靠自己的双手堂堂正正的赚钱......"
+          title="世间本无事,庸人自扰之,框架发布以来,免不了质疑和嘲笑,但我从未放弃,我只想靠自己的双手堂堂正正的赚钱......"
           type="success"
         >
         </el-alert>
@@ -150,6 +150,13 @@
             </a>
             &nbsp;&nbsp;&nbsp;
             <el-button type="primary">文档</el-button>
+            &nbsp;&nbsp;&nbsp;
+            <!--<a
+              target="_blank"
+              href="http://wpa.qq.com/msgrd?v=3&uin=1204505056&site=qq&menu=yes"
+            >
+              <el-button type="primary">作者QQ</el-button>
+            </a>-->
           </div>
         </el-card>
       </el-col>
