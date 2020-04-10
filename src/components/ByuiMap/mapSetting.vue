@@ -79,7 +79,7 @@ export default {
           baseLayer: new maptalks.TileLayer("base", {
             renderer: this.renderer,
             tileSystem: [1, -1, -180, 90],
-            urlTemplate: this.baseLayer,
+            urlTemplate: this.$baseLayer,
             subdomains: ["1", "2", "3", "4", "5"],
             attribution:
               '&copy; <a target="_blank" href="http://www.tianditu.cn">天地图</a>',
@@ -108,7 +108,7 @@ export default {
             projection: "baidu",
           },
           baseLayer: new maptalks.TileLayer("base", {
-            urlTemplate: this.baseLayer,
+            urlTemplate: this.$baseLayer,
             subdomains: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
             attribution:
               '&copy; <a target="_blank" href="http://map.baidu.com">百度地图</a>',
@@ -131,7 +131,7 @@ export default {
           },
           baseLayer: new maptalks.TileLayer("base", {
             tileSystem: [1, -1, -180, 90],
-            urlTemplate: this.baseLayer,
+            urlTemplate: this.$baseLayer,
             subdomains: ["1", "2", "3", "4"],
             attribution:
               '&copy; <a target="_blank" href="https://www.amap.com/">高德地图</a>',

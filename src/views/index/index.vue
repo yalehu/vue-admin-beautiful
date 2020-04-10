@@ -475,7 +475,7 @@ export default {
   mounted() {},
   methods: {
     handleClick(e) {
-      this.baseMessage(`点击了${e.name},这里可以写跳转`);
+      this.$baseMessage(`点击了${e.name},这里可以写跳转`);
     },
     handleZrClick(e) {},
     handleChangeTheme() {

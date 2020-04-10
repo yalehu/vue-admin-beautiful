@@ -91,7 +91,7 @@ export default {
         },
         false
       );
-      this.baseColorfullLoading();
+      this.$baseColorfullLoading();
     });
   },
   methods: {

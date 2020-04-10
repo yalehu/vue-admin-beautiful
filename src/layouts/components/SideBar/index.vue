@@ -44,7 +44,7 @@ export default {
         return path.resolve(item.path);
       });
       /*只默认展开除了首页,登录,404,重定向以外的第一级*/
-      arr = this.baseLodash().pull(
+      arr = this.$baseLodash().pull(
         arr,
         "/",
         "/*",

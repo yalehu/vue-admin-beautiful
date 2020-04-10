@@ -137,7 +137,7 @@ export default {
           }
         });
         if (valid) {
-          this.baseMessage("submit!", "success");
+          this.$baseMessage("submit!", "success");
         } else {
           return false;
         }

@@ -123,7 +123,7 @@ export default {
   computed: {
     percentage() {
       if (this.allImgNum == 0) return 0;
-      return this.baseLodash().round(this.imgNum / this.allImgNum, 2) * 100;
+      return this.$baseLodash().round(this.imgNum / this.allImgNum, 2) * 100;
     },
   },
   created() {
@@ -134,7 +134,7 @@ export default {
     }
 
     this.action = this.api + this.url;
-    this.headers[tokenName] = this.baseAccessToken();
+    this.headers[tokenName] = this.$baseAccessToken();
   },
   methods: {
     submitUpload() {
@@ -162,7 +162,7 @@ export default {
       if (fileList.length === this.imgNum) {
         setTimeout(() => {
           this.$emit("fetchDatas");
-          this.baseMessage(
+          this.$baseMessage(
             `上传完成! 共上传${fileList.length}张图片`,
             "success"
           );
@@ -177,8 +177,8 @@ export default {
     handleError(err, file, fileList) {
       this.imgNum = this.imgNum + 1;
       this.imgErrorNum = this.imgErrorNum + 1;
-      this.baseMessage(
-        `文件[${file.raw.name}]上传失败,文件大小为${this.baseLodash().round(
+      this.$baseMessage(
+        `文件[${file.raw.name}]上传失败,文件大小为${this.$baseLodash().round(
           file.raw.size / 1024,
           0
         )}KB`,
@@ -198,7 +198,7 @@ export default {
       this.dialogVisible = true;
     },
     handleExceed(files, fileList) {
-      this.baseMessage(
+      this.$baseMessage(
         `当前限制选择 ${this.limit} 个文件，本次选择了
              ${files.length}
              个文件`,
@@ -224,7 +224,7 @@ export default {
       }
 
       this.action = this.api + this.url;
-      this.headers[tokenName] = this.baseAccessToken();
+      this.headers[tokenName] = this.$baseAccessToken();
       this.dialogFormVisible = false;
     },
   },

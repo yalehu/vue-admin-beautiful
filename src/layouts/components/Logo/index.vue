@@ -17,7 +17,7 @@ export default {
   name: "Logo",
   data() {
     return {
-      title: this.baseTitle,
+      title: this.$baseTitle,
     };
   },
   computed: {

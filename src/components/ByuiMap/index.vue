@@ -60,8 +60,8 @@ export default {
       that.map = new maptalks.Map("map", {
         center: [116.41348403785, 39.910843952376],
         zoom: 12,
-        spatialReference: this.baseSpatialReference(),
-        baseLayer: new maptalks.TileLayer("base", this.baseLayer()),
+        spatialReference: this.$baseSpatialReference(),
+        baseLayer: new maptalks.TileLayer("base", this.$baseLayer()),
       });
     },
     /* 初始化图形绘制工具 */

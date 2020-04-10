@@ -101,14 +101,14 @@ export default {
   },
   created() {
     this.fetchData();
-    this.height = this.baseTableHeight(1);
+    this.height = this.$baseTableHeight(1);
   },
   methods: {
     bigClick(val) {
-      this.baseAlert("点击了大图");
+      this.$baseAlert("点击了大图");
     },
     smallClick(val) {
-      this.baseAlert("点击了小图");
+      this.$baseAlert("点击了小图");
     },
     handleSizeChange(val) {
       this.pageSize = val;

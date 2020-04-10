@@ -25,7 +25,7 @@ export default {
   methods: {
     click() {
       if (!screenfull.isEnabled) {
-        this.baseMessage("开启全屏失败", "error");
+        this.$baseMessage("开启全屏失败", "error");
         return false;
       }
       screenfull.toggle();

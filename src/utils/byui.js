@@ -7,15 +7,15 @@ import { getAccessToken } from "@/utils/accessToken";
 
 const install = (Vue, opts = {}) => {
   /* 全局accessToken */
-  Vue.prototype.baseAccessToken = () => {
+  Vue.prototype.$baseAccessToken = () => {
     return store.getters.accessToken || getAccessToken();
   };
   /* 全局标题 */
-  Vue.prototype.baseTitle = (() => {
+  Vue.prototype.$baseTitle = (() => {
     return title;
   })();
   /* 全局加载层 */
-  Vue.prototype.baseLoading = (index, text, callback) => {
+  Vue.prototype.$baseLoading = (index, text, callback) => {
     let loading;
     if (!index) {
       loading = Loading.service({
@@ -40,7 +40,7 @@ const install = (Vue, opts = {}) => {
     }
   };
   /* 全局多彩加载层 */
-  Vue.prototype.baseColorfullLoading = (index, text, callback) => {
+  Vue.prototype.$baseColorfullLoading = (index, text, callback) => {
     let loading;
     if (!index) {
       loading = Loading.service({
@@ -80,7 +80,7 @@ const install = (Vue, opts = {}) => {
     }
   };
   /* 全局Message */
-  Vue.prototype.baseMessage = (message, type) => {
+  Vue.prototype.$baseMessage = (message, type) => {
     Message({
       offset: 60,
       showClose: true,
@@ -92,7 +92,7 @@ const install = (Vue, opts = {}) => {
   };
 
   /* 全局Alert */
-  Vue.prototype.baseAlert = (content, title, callback) => {
+  Vue.prototype.$baseAlert = (content, title, callback) => {
     MessageBox.alert(content, title || "温馨提示", {
       confirmButtonText: "确定",
       dangerouslyUseHTMLString: true,
@@ -105,7 +105,7 @@ const install = (Vue, opts = {}) => {
   };
 
   /* 全局Confirm */
-  Vue.prototype.baseConfirm = (content, title, callback1, callback2) => {
+  Vue.prototype.$baseConfirm = (content, title, callback1, callback2) => {
     MessageBox.confirm(content, title || "温馨提示", {
       confirmButtonText: "确定",
       cancelButtonText: "取消",
@@ -125,7 +125,7 @@ const install = (Vue, opts = {}) => {
   };
 
   /* 全局Notification */
-  Vue.prototype.baseNotify = (message, title, type, position) => {
+  Vue.prototype.$baseNotify = (message, title, type, position) => {
     Notification({
       title: title,
       message: message,
@@ -136,7 +136,7 @@ const install = (Vue, opts = {}) => {
   };
 
   /* 全局TableHeight */
-  Vue.prototype.baseTableHeight = (formType) => {
+  Vue.prototype.$baseTableHeight = (formType) => {
     let height = $(window).height();
     let paddingHeight = 270;
     const formHeight = 50;
@@ -159,7 +159,7 @@ const install = (Vue, opts = {}) => {
   };
 
   /* 全局map图层 */
-  Vue.prototype.baseLayer = () => {
+  Vue.prototype.$baseLayer = () => {
     return {
       urlTemplate:
         "http://online{s}.map.bdimg.com/onlinelabel/?qt=tile&x={x}&y={y}&z={z}&styles=pl&scaler=1&p=1",
@@ -168,18 +168,20 @@ const install = (Vue, opts = {}) => {
         '&copy; <a target="_blank" href="http://map.baidu.com">Baidu</a>',
     };
   };
-  Vue.prototype.baseSpatialReference = () => {
+  Vue.prototype.$baseSpatialReference = () => {
     return {
       projection: "baidu",
     };
   };
 
   /* 全局lodash */
-  Vue.prototype.baseLodash = () => {
+  Vue.prototype.$baseLodash = () => {
     return lodash;
   };
   /* 全局x2js */
   Vue.prototype.x2js = new x2js();
+  /* 全局事件总线 */
+  Vue.prototype.$baseEventBus = new Vue();
 };
 
 if (typeof window !== "undefined" && window.Vue) {

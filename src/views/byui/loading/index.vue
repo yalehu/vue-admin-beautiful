@@ -39,10 +39,10 @@ export default {
   },
   methods: {
     handleLoading(index) {
-      this.baseLoading(index);
+      this.$baseLoading(index);
     },
     handleColorfullLoading(index) {
-      this.baseColorfullLoading(index);
+      this.$baseColorfullLoading(index);
     },
     test() {
       location.reload();

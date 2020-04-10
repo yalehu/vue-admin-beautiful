@@ -100,7 +100,7 @@ export const genTableSnippet = (headers = "getList") => {
     },
     created() {
       this.fetchData();
-      this.height = this.baseTableHeight(1);
+      this.height = this.$baseTableHeight(1);
     },
     methods: {
       setSelectRows(val) {
@@ -111,7 +111,7 @@ export const genTableSnippet = (headers = "getList") => {
       handleDelete() {
         if (this.selectRows.length > 0) {
           const ids = this.selectRows.map(item => item.id).join();
-          this.baseConfirm(
+          this.$baseConfirm(
             "你确定要删除选中项吗",
             null,
             () => {
@@ -122,7 +122,7 @@ export const genTableSnippet = (headers = "getList") => {
             },
           );
         } else {
-          this.baseMessage("未选中任何行", "error");
+          this.$baseMessage("未选中任何行", "error");
           return false;
         }
       },

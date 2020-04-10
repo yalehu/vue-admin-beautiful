@@ -97,7 +97,7 @@ export default {
       }
     };
     return {
-      title: this.baseTitle,
+      title: this.$baseTitle,
       loginForm: {
         userName: "",
         password: "",

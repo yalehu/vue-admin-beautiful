@@ -33,7 +33,7 @@ export default {
       if (editorValue) {
         this.$emit("change", editorValue);
       } else {
-        this.baseMessage("JSON不能为空,否则无法生成表格", "error");
+        this.$baseMessage("JSON不能为空,否则无法生成表格", "error");
       }
       if (value !== editorValue) {
         this.jsonEditor.setValue(JSON.stringify(this.value, null, 2));

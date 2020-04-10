@@ -102,7 +102,7 @@ export default {
         this.queryIcon = res.data;
         this.allIcon = res.data;
         this.tips = `共检索到${this.allIcon.length}个图标`;
-        this.baseMessage(
+        this.$baseMessage(
           "累计更新" + this.allIcon.length + "个图标",
           "success"
         );

@@ -153,7 +153,7 @@ export default {
   },
   created() {
     this.fetchData();
-    this.height = this.baseTableHeight(1);
+    this.height = this.$baseTableHeight(1);
   },
   beforeDestroy() {
     $("body").off("click");
@@ -194,10 +194,10 @@ export default {
     },
     handleDelete() {
       if (this.selectRows.length === 0) {
-        return this.baseMessage("请至少选择一项", "error");
+        return this.$baseMessage("请至少选择一项", "error");
       }
       const ids = this.selectRows.map((item) => item.id).join();
-      this.baseConfirm(
+      this.$baseConfirm(
         "你确定要删除选中项吗",
         null,
         () => {
@@ -239,19 +239,19 @@ export default {
       });
     },
     testMessage() {
-      this.baseMessage("test1", "success");
+      this.$baseMessage("test1", "success");
     },
     testALert() {
-      this.baseAlert("11");
-      this.baseAlert("11", "自定义标题", () => {
+      this.$baseAlert("11");
+      this.$baseAlert("11", "自定义标题", () => {
         /* 可以写回调; */
       });
-      this.baseAlert("11", null, () => {
+      this.$baseAlert("11", null, () => {
         /* 可以写回调; */
       });
     },
     testConfirm() {
-      this.baseConfirm(
+      this.$baseConfirm(
         "你确定要执行该操作?",
         null,
         () => {
@@ -263,7 +263,7 @@ export default {
       );
     },
     testNotify() {
-      this.baseNotify("测试消息提示", "test", "success", "bottom-right");
+      this.$baseNotify("测试消息提示", "test", "success", "bottom-right");
     },
     checkPermission,
   },

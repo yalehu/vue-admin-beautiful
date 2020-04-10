@@ -31,7 +31,7 @@ export default {
   },
   created() {
     this.getData();
-    this.height = this.baseTableHeight() + 50;
+    this.height = this.$baseTableHeight() + 50;
   },
   methods: {
     getData() {

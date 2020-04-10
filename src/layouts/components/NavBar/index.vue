@@ -77,8 +77,8 @@ export default {
       this.$store.dispatch("settings/changeCollapse");
     },
     async logout() {
-      await this.baseConfirm(
-        "您确定要退出" + this.baseTitle + "吗?",
+      await this.$baseConfirm(
+        "您确定要退出" + this.$baseTitle + "吗?",
         null,
         () => {
           const fullPath = this.$route.fullPath;
