@@ -1,11 +1,6 @@
 <template>
-  <div style="margin-top: 20px; margin-left: 20px;">
-    <el-table
-      :key="table_key"
-      :data="list"
-      style="width: 100%; margin-top: -10px;"
-      @header-click="test"
-    >
+  <div>
+    <el-table :key="table_key" :data="list" @header-click="test">
       <template v-for="header in headers">
         <el-table-column
           v-if="header.show"

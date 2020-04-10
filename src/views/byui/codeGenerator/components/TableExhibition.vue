@@ -2,10 +2,10 @@
   <div class="app-container">
     <TableExhibitionQuery :headers="headers" />
     <el-row>
-      <el-col :span="6">
+      <el-col :xs="24" :sm="24" :md="6" :lg="6" :xl="6">
         <TableExhibitionHeader :headers.sync="headers" />
       </el-col>
-      <el-col :span="18">
+      <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
         <TableExhibitionBody :headers="headers" :list="list" />
       </el-col>
     </el-row>

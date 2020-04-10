@@ -47,7 +47,7 @@ export const genTableSnippet = (headers = "getList") => {
     >
       <el-table-column type="selection"></el-table-column>
       ${genTableColumnSnippet(headers)}
-      <el-table-column label="操作" width="150" fixed="right">
+      <el-table-column fixed="right" label="操作" width="150" fixed="right">
         <template v-slot="scope">
           <el-button type="text" @click="editList(scope.row)"
           >编辑
@@ -77,7 +77,7 @@ export const genTableSnippet = (headers = "getList") => {
   import { getList } from "@/api/table";
 
   export default {
-    name: "你的view名称与文件夹名称相同不要忘了首字母大写,且唯一",
+    name: "这里会报错,记住,你的view名称与文件夹名称相同不要忘了首字母大写,且唯一",
     data() {
       return {
         list: null,
@@ -90,13 +90,10 @@ export const genTableSnippet = (headers = "getList") => {
         elementLoadingText: "正在加载...",
         queryForm: {
           pageNo: 1,
-          pageSize: 10
-      ${headers[0].key}
-    :
-      "",
+          pageSize: 10,
+          ${headers[0].key} : "",
     }
-    }
-      ;
+    };
     },
     created() {
       this.fetchData();

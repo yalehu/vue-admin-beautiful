@@ -11,7 +11,9 @@
 
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="closeCodeDialog">复制代码</el-button>
+        <el-button type="primary" @click="closeCodeDialog(srcTableCode, $event)"
+          >复制代码</el-button
+        >
       </span>
     </el-dialog>
   </div>
@@ -38,8 +40,8 @@ export default {
     ...mapGetters(["srcTableCode"]),
   },
   methods: {
-    handleClipboard(text, evnet) {
-      clipboard(text, evnet);
+    handleClipboard(text, event) {
+      clipboard(text, event);
     },
     openCodeDialog() {
       this.dialogVisible = true;
@@ -53,8 +55,8 @@ export default {
         });
       }, 0);
     },
-    closeCodeDialog() {
-      this.handleClipboard();
+    closeCodeDialog(text, event) {
+      this.handleClipboard(text, event);
       this.dialogVisible = false;
     },
   },

@@ -93,8 +93,10 @@ export default {
 </script>
 <style scoped>
 .table-header-card {
-  margin: 10px 0;
   padding: 10px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  margin-right: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
