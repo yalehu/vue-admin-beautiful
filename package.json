@@ -3,9 +3,7 @@
   "version": "2.2.0",
   "private": true,
   "author": "chuzhixin <1204505056@qq.com>",
-  "participants": [
-    "liyanna,songmeiyu,lizhenguo"
-  ],
+  "participants": [],
   "homepage": "https://chu1204505056.gitee.io/byui-bookmarks/",
   "scripts": {
     "serve": "vue-cli-service serve",
