@@ -1,12 +1,13 @@
 import defaultSettings from "@/settings";
 
 const { tagsView, logo, layout, header } = defaultSettings;
+const theme = JSON.parse(localStorage.getItem("BYUI-VUE-THEME")) || "";
 const state = {
-  tagsView: localStorage.getItem("BYUI-VUE-TAGS-VIEW") || tagsView,
+  tagsView: theme.tagsView || tagsView,
   logo: logo,
   collapse: false,
-  layout: localStorage.getItem("BYUI-VUE-LAYOUT") || layout,
-  header: localStorage.getItem("BYUI-VUE-HEADER") || header,
+  layout: theme.layout || layout,
+  header: theme.header || header,
 };
 const mutations = {
   CHANGE_LAYOUT: (state, layout) => {

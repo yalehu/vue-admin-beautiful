@@ -1,4 +1,5 @@
 import { heading, img, keel, text } from "zx-keel";
+import "@/styles/keel-variables.scss";
 
 const byuiKeel = keel;
 const byuiKeelHeading = heading;

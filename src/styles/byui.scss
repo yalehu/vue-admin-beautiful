@@ -16,6 +16,12 @@ html {
       max-height: 90vh;
       overflow-y: scroll;
     }
+    svg,
+    i {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
 
     /*文本编辑器开始*/
     .quill-editor {
@@ -165,7 +171,7 @@ html {
     .app-wrapper {
       .app-main-container {
         > [class*="-container"] {
-          padding: 20px;
+          padding: 15px;
           background: $base-color-white;
         }
       }

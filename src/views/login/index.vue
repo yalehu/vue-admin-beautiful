@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="login-logo-bysj"></div>
     <el-row>
-      <el-col :xs="24" :sm="24" :md="24" :lg="10" :xl="10">
+      <el-col :xs="24" :sm="24" :md="24" :lg="8" :xl="8">
         <el-form
           ref="loginForm"
           :model="loginForm"

@@ -1,25 +1,10 @@
 <template>
   <span v-if="themeBar">
-    <el-popover
+    <byui-icon
+      title="主题配置"
       @click="handleChangeTheme"
-      placement="bottom"
-      width="200"
-      trigger="manual"
-      v-model="popoverVisible"
-    >
-      <byui-icon
-        title="主题配置"
-        slot="reference"
-        @click="handleChangeTheme"
-        :icon="['fas', 'brush']"
-      />
-      <p>点这里进行主题配置</p>
-      <div style="text-align: right; margin: 0;">
-        <el-button type="text" size="mini" @click="popoverVisible = false">
-          确定
-        </el-button>
-      </div>
-    </el-popover>
+      :icon="['fas', 'brush']"
+    />
     <el-drawer
       title="主题配置"
       :visible.sync="drawerVisible"
@@ -90,12 +75,11 @@
 import variables from "@/styles/variables.scss";
 import { mapGetters } from "vuex";
 import { themeBar } from "@/settings";
-import { EventBus } from "@/utils";
+
 export default {
   name: "ThemeBar",
   data() {
     return {
-      popoverVisible: false,
       themeBar,
       drawerVisible: false,
       theme: {
@@ -111,12 +95,7 @@ export default {
   computed: {
     ...mapGetters(["layout", "header", "tagsView"]),
   },
-  mounted() {
-    this.popoverVisible = true;
-    EventBus.$on("theme", () => {
-      this.handleChangeTheme();
-    });
-  },
+  mounted() {},
   created() {
     const theme = localStorage.getItem("BYUI-VUE-THEME");
     this.theme.layout = this.layout;
@@ -158,7 +137,7 @@ export default {
       document.getElementsByTagName("head").item(0).appendChild(style);
       localStorage.setItem(
         "BYUI-VUE-THEME",
-        `{"menuBackground":"${menuBackground}","menuActiveBackground":"${menuActiveBackground}","tagViewsActiveBackground":"${tagViewsActiveBackground}"}`
+        `{"menuBackground":"${menuBackground}", "menuActiveBackground":"${menuActiveBackground}", "tagViewsActiveBackground":"${tagViewsActiveBackground}", "layout":"${layout}", "header":"${header}", "tagsView":"${tagsView}" }`
       );
       this.handleSwitchLayout(layout);
       this.handleSwitchHeader(header);
@@ -172,9 +151,9 @@ export default {
     handleSetDfaultTheme() {
       $("#BYUI-VUE-THEME").remove();
       localStorage.removeItem("BYUI-VUE-THEME");
-      localStorage.removeItem("BYUI-VUE-LAYOUT");
-      localStorage.removeItem("BYUI-VUE-HEADER");
-      localStorage.removeItem("BYUI-VUE-TAGS-VIEW");
+      //localStorage.removeItem("BYUI-VUE-LAYOUT");
+      //localStorage.removeItem("BYUI-VUE-HEADER");
+      //localStorage.removeItem("BYUI-VUE-TAGS-VIEW");
       this.$store.dispatch("settings/changeLayout", this.theme.layout);
       this.$refs["form"].resetFields();
       Object.assign(this.$data, this.$options.data());
@@ -182,15 +161,15 @@ export default {
       location.reload();
     },
     handleSwitchLayout(layout) {
-      localStorage.setItem("BYUI-VUE-LAYOUT", layout);
+      //localStorage.setItem("BYUI-VUE-LAYOUT", layout);
       this.$store.dispatch("settings/changeLayout", layout);
     },
     handleSwitchHeader(header) {
-      localStorage.setItem("BYUI-VUE-HEADER", header);
+      //localStorage.setItem("BYUI-VUE-HEADER", header);
       this.$store.dispatch("settings/changeHeader", header);
     },
     handleSwitchTagsView(tagsView) {
-      localStorage.setItem("BYUI-VUE-TAGS-VIEW", tagsView);
+      //localStorage.setItem("BYUI-VUE-TAGS-VIEW", tagsView);
       this.$store.dispatch("settings/changeTagsView", tagsView);
     },
   },

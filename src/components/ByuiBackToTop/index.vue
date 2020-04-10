@@ -30,7 +30,7 @@ export default {
           background: "#fff",
           color: "#1890ff",
           right: "25px",
-          bottom: "75px",
+          bottom: "25px",
           width: "50px",
           height: "50px",
           paddingTop: "15px",
@@ -78,7 +78,6 @@ export default {
     },
     backToTop() {
       if (this.isMoving) return;
-      //   横向
       const start = window.pageYOffset;
       let i = 0;
       this.isMoving = true;
@@ -108,7 +107,7 @@ export default {
   display: inline-block;
   text-align: center;
   cursor: pointer;
-  z-index: 99;
+  z-index: 97;
 }
 
 .back-to-ceiling:hover {

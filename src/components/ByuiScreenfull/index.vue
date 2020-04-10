@@ -48,15 +48,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.screenfull-svg {
-  display: inline-block;
-  cursor: pointer;
-  fill: $base-color-gray;
-}
-
-.svg-icon {
-  color: $base-color-gray;
-  cursor: pointer;
-}
-</style>
+<style lang="scss" scoped></style>

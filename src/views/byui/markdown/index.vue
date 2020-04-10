@@ -15,7 +15,6 @@
 
 <script>
 import { getPrettierList } from "@/api/markdown";
-
 import marked from "marked";
 import "github-markdown-css/github-markdown.css";
 
@@ -32,7 +31,7 @@ export default {
         },
       ],
       value: "0",
-      prettierList: [],
+      prettierList: null,
     };
   },
   created() {

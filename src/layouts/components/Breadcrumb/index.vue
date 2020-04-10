@@ -45,7 +45,7 @@ export default {
       );
       const first = matched[0];
 
-      if (!this.isIndex(first)) {
+      /*if (!this.isIndex(first)) {
         matched = [
           {
             path: "/index",
@@ -55,7 +55,7 @@ export default {
             },
           },
         ].concat(matched);
-      }
+      }*/
 
       this.levelList = matched.filter(
         (item) => item.meta && item.meta.title && item.meta.breadcrumb !== false
@@ -87,7 +87,6 @@ export default {
 
 <style lang="scss" scoped>
 .breadcrumb-container {
-  transition: all 0.3s;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;

@@ -11,7 +11,7 @@
       :collapse="collapse"
       :collapse-transition="false"
       :default-openeds="defaultOpen"
-      :unique-opened="false"
+      unique-opened
       mode="vertical"
     >
       <sidebar-item
@@ -37,14 +37,14 @@ export default {
     return { version: version };
   },
   computed: {
-    ...mapGetters(["collapse"]),
+    ...mapGetters(["collapse", "routes"]),
     defaultOpen() {
       const list = this.$store.getters.routes;
       let arr = list.map((item) => {
         return path.resolve(item.path);
       });
       /*只默认展开除了首页,登录,404,重定向以外的第一级*/
-      arr = this.$baseLodash().pull(
+      arr = this.$baseLodash.pull(
         arr,
         "/",
         "/*",
@@ -54,9 +54,6 @@ export default {
       );
       return arr;
     },
-    routes() {
-      return this.$store.getters.routes;
-    },
     activeMenu() {
       const route = this.$route;
       const { meta, path } = route;
@@ -64,9 +61,6 @@ export default {
         return meta.activeMenu;
       }
       return path;
-    },
-    showLogo() {
-      return this.$store.state.settings.logo;
     },
     variables() {
       return variables;

@@ -1,9 +1,7 @@
 <template>
   <div :class="'logo-container-' + layout">
     <router-link to="/">
-      <!-- <svg-icon class="logo" icon-class="icon" />-->
-      <byui-icon class="logo" :icon="['fas', 'piggy-bank']"></byui-icon>
-      <!--<svg-icon class="logo" icon-class="alarm_clock" />-->
+      <svg-icon class="logo" icon-class="icon" />
       <span class="title" :title="title">
         {{ title }}
       </span>
@@ -40,6 +38,7 @@ export default {
   height: 32px;
   vertical-align: middle;
   margin-right: 5px;
+  margin-top: -3px;
   color: $base-title;
 }
 
@@ -56,7 +55,6 @@ export default {
 }
 
 .logo-container-horizontal {
-  transition: all 0.3s;
   @include container;
 
   .logo {
@@ -69,7 +67,6 @@ export default {
 }
 
 .logo-container-vertical {
-  transition: all 0.3s;
   @include container;
   text-align: center;
 

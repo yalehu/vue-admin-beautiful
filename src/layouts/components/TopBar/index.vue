@@ -51,9 +51,6 @@ export default {
       }
       return path;
     },
-    showLogo() {
-      return this.$store.state.settings.logo;
-    },
     variables() {
       return variables;
     },
@@ -62,7 +59,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .top-bar-container {
-  transition: all 0.3s;
   background: $base-color-header;
 
   .el-menu.el-menu--horizontal {

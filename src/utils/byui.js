@@ -175,11 +175,9 @@ const install = (Vue, opts = {}) => {
   };
 
   /* 全局lodash */
-  Vue.prototype.$baseLodash = () => {
-    return lodash;
-  };
+  Vue.prototype.$baseLodash = lodash;
   /* 全局x2js */
-  Vue.prototype.x2js = new x2js();
+  Vue.prototype.$baseX2js = new x2js();
   /* 全局事件总线 */
   Vue.prototype.$baseEventBus = new Vue();
 };

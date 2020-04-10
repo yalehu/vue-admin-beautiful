@@ -123,7 +123,7 @@ export default {
   computed: {
     percentage() {
       if (this.allImgNum == 0) return 0;
-      return this.$baseLodash().round(this.imgNum / this.allImgNum, 2) * 100;
+      return this.$baseLodash.round(this.imgNum / this.allImgNum, 2) * 100;
     },
   },
   created() {
@@ -178,7 +178,7 @@ export default {
       this.imgNum = this.imgNum + 1;
       this.imgErrorNum = this.imgErrorNum + 1;
       this.$baseMessage(
-        `文件[${file.raw.name}]上传失败,文件大小为${this.$baseLodash().round(
+        `文件[${file.raw.name}]上传失败,文件大小为${this.$baseLodash.round(
           file.raw.size / 1024,
           0
         )}KB`,

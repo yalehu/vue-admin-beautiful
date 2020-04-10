@@ -28,12 +28,6 @@ export default {
       if (!document.hidden) {
         const isMobile = this.$_isMobile();
         store.dispatch("app/toggleDevice", isMobile ? "mobile" : "desktop");
-
-        if (isMobile) {
-          store.dispatch("settings/foldSideBar");
-        } else {
-          store.dispatch("settings/openSideBar");
-        }
       }
     },
   },

@@ -2,6 +2,11 @@
   <div class="waterfall-container">
     <el-row :gutter="15">
       <el-col :span="24">
+        <el-divider content-position="left">
+          瀑布屏占用网络带宽较大,加载稍慢...
+        </el-divider>
+      </el-col>
+      <el-col :span="24">
         <byui-waterfall
           :height="height"
           :imgs-arr="imgsArr"
@@ -31,7 +36,7 @@ export default {
   },
   created() {
     this.getData();
-    this.height = this.$baseTableHeight() + 50;
+    this.height = this.$baseTableHeight();
   },
   methods: {
     getData() {

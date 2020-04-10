@@ -67,7 +67,6 @@ export default {
 
 <style lang="scss" scoped>
 .app-main-container {
-  transition: all 0.3s;
   width: 100%;
   position: relative;
   overflow: hidden;

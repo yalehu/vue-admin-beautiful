@@ -19,8 +19,14 @@ require("script-loader!jsonlint");
 
 export default {
   name: "JsonEditor",
-  /* eslint-disable vue/require-prop-types */
-  props: ["value"],
+  props: {
+    value: {
+      type: [Array, Object],
+      default: () => {
+        return null;
+      },
+    },
+  },
   data() {
     return {
       jsonEditor: false,

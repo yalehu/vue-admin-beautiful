@@ -363,9 +363,9 @@ export default {
     // 删除节点操作
     remove(node, data) {
       const that = this;
-      that.baseConfirm("你确定要删除该节点?", null, () => {
+      that.$baseConfirm("你确定要删除该节点?", null, () => {
         getTreeList().then((res) => {
-          that.baseMessage(res.msg, "success");
+          that.$baseMessage(res.msg, "success");
           that.getTreeListFuc(0);
         });
       });
@@ -376,7 +376,7 @@ export default {
       this.$refs.treeForm.validate((valid) => {
         if (valid) {
           getTreeList().then((res) => {
-            that.baseMessage(res.msg, "success");
+            that.$baseMessage(res.msg, "success");
             that.treeDialogVisible = false;
             that.getTreeListFuc(0);
           });
