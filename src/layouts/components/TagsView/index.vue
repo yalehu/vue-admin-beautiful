@@ -266,7 +266,7 @@ export default {
     text-align: center;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.9;
     }
   }
 

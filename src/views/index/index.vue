@@ -132,7 +132,7 @@
           </table>
           <div class="bottom-btn">
             <a @click="handleChangeTheme">
-              <el-button type="primary">修改主题</el-button>
+              <el-button type="primary">修改主题和布局</el-button>
             </a>
             &nbsp;&nbsp;&nbsp;
             <a
