@@ -24,10 +24,7 @@
             :icon="['fas', 'redo']"
           />
 
-          <el-avatar
-            :size="size"
-            :src="require('@/assets/user.gif')"
-          ></el-avatar>
+          <el-avatar :src="require('@/assets/user.gif')"></el-avatar>
           <el-tooltip effect="light" placement="bottom">
             <div slot="content">上次登录时间:{{ lastLoginTime }}</div>
             <span class="user-name">{{ name }}</span>

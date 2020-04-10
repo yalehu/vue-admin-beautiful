@@ -154,7 +154,7 @@ export default {
       style.innerHTML = `
       .top-bar-container, .top-bar-container .byui-main, .side-bar-container, .logo-container-vertical, .logo-container-horizontal, .el-menu, .el-menu-item, .el-submenu.is-active.is-opened, .el-submenu__title, .el-menu-item.is-active, .el-menu-item .is-active { background-color:${menuBackground}!important; }
       body .el-menu--horizontal .top-bar-item-container  .el-menu-item:hover, body .el-menu--horizontal .top-bar-item-container .el-menu-item.is-active, body .app-wrapper .side-bar-container .el-submenu .el-menu-item.is-active, body .app-wrapper .side-bar-container  .el-menu-item:hover,body .side-bar-container .el-menu .el-menu-item.is-active{ background-color:${menuActiveBackground}!important; }
-      .tags-view-item.router-link-exact-active.router-link-active.active{ background-color: ${tagViewsActiveBackground}; border: 1px solid ${tagViewsActiveBackground}; } `;
+      .tags-view-item.router-link-exact-active.router-link-active.active{ background-color: ${tagViewsActiveBackground}!important; border: 1px solid ${tagViewsActiveBackground}!important; } `;
       document.getElementsByTagName("head").item(0).appendChild(style);
       localStorage.setItem(
         "BYUI-VUE-THEME",
