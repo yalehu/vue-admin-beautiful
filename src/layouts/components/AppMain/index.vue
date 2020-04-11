@@ -1,5 +1,6 @@
 <template>
   <section class="app-main-container">
+    <github-corner></github-corner>
     <transition mode="out-in" name="fade-transform">
       <keep-alive :include="cachedViews" :max="10">
         <byui-keel v-if="show" style="margin: 15px;">
@@ -19,6 +20,7 @@
 <script>
 import { byuiKeel, byuiKeelHeading, byuiKeelText } from "@/plugins/byuiKeel";
 import { mapGetters } from "vuex";
+import GithubCorner from "@/components/GithubCorner";
 
 export default {
   name: "AppMain",
@@ -26,6 +28,7 @@ export default {
     byuiKeel,
     byuiKeelHeading,
     byuiKeelText,
+    GithubCorner,
   },
   data() {
     return {

@@ -168,7 +168,7 @@
 import byuiChart from "@/plugins/echarts";
 import byuiCount from "@/plugins/byuiCount";
 import { dependencies, devDependencies } from "../../../package.json";
-
+import ByuiFaultText from "@/components/ByuiFaultText";
 export default {
   name: "Index",
   components: {
