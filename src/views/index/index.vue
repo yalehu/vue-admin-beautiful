@@ -149,8 +149,13 @@
               <el-button type="primary">源码获取</el-button>
             </a>
             &nbsp;&nbsp;&nbsp;
-            <el-button type="primary">文档</el-button>
-            &nbsp;&nbsp;&nbsp;
+            <a
+              target="_blank"
+              href="https://chu1204505056.gitee.io/byui-bookmarks/guide/"
+            >
+              <el-button type="primary">文档</el-button>
+              &nbsp;&nbsp;&nbsp;
+            </a>
             <!--<a
               target="_blank"
               href="http://wpa.qq.com/msgrd?v=3&uin=1204505056&site=qq&menu=yes"

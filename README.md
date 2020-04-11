@@ -2,7 +2,7 @@
 
 - Vue
 - Element
-- Vue-element-admin-beautiful
+- Vue-admin-beautiful
 
 <p align="center">
   <a href="https://github.com/vuejs/vue">
@@ -15,8 +15,8 @@
 
 ## 简介
 
-演示地址:[vue-element-admin-beautiful](http://chu1204505056.gitee.io/byui)
-演示地址(备份,图标可能存在跨域):[vue-element-admin-beautiful](http://chu1204505056.gitee.io)
+演示地址:[vue-admin-beautiful](http://chu1204505056.gitee.io/vue-admin-beautiful)
+演示地址(备份,图标可能存在跨域):[vue-admin-beautiful](http://chu1204505056.gitee.io)
 
 ## 梦想
 
