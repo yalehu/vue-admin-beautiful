@@ -44,7 +44,7 @@
     "element-ui": "^2.13.0",
     "github-markdown-css": "^4.0.0",
     "highlight": "^0.2.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-cookie": "^2.2.1",
     "jsencrypt": "^3.0.0-rc.1",
     "jsonlint": "^1.6.3",
