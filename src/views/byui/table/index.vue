@@ -17,7 +17,12 @@
         </el-button>
       </byui-query-form-left-panel>
       <byui-query-form-right-panel>
-        <el-form ref="form" :model="queryForm" :inline="true">
+        <el-form
+          ref="form"
+          :model="queryForm"
+          :inline="true"
+          @submit.native.prevent
+        >
           <el-form-item>
             <el-input v-model="queryForm.title" placeholder="标题" />
           </el-form-item>

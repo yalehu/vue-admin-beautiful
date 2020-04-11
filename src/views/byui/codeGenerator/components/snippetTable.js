@@ -16,7 +16,7 @@ export const genTableSnippet = (headers = "getList") => {
         >
       </byui-query-form-left-panel>
       <byui-query-form-right-panel :span="12">
-        <el-form :inline="true" :model="queryForm">
+        <el-form :inline="true" :model="queryForm" @submit.native.prevent>
           <el-form-item>
             <el-input
               v-model.trim="queryForm.${headers[0].key}"
@@ -26,7 +26,6 @@ export const genTableSnippet = (headers = "getList") => {
           </el-form-item>
           <el-form-item>
             <el-button
-              native-type="submit"
               icon="el-icon-search"
               type="primary"
               @click="queryData"
